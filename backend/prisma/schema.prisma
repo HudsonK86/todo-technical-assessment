@@ -1,0 +1,28 @@
+// Generate the Prisma Client used by the NestJS service.
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Configure Prisma to use SQLite for this assessment.
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Define the Todo table/model used by the application.
+model Todo {
+  // Auto-incrementing primary key.
+  id        Int      @id @default(autoincrement())
+
+  // Text entered by the user for the Todo item.
+  title     String
+
+  // New Todo items are incomplete by default.
+  completed Boolean  @default(false)
+
+  // Store the time when the Todo was first created.
+  createdAt DateTime @default(now())
+
+  // Prisma automatically changes this value after every update.
+  updatedAt DateTime @updatedAt
+}
