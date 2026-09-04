@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.next/
+out/
+
+# Environment files
+.env
+.env.local
+
+# Prisma / SQLite local database files
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
